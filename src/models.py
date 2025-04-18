@@ -1,7 +1,7 @@
 import torchvision.models as models
 import torch.nn as nn
 
-def get_model(model_name, num_classes):
+def get_model(model_name, num_classes, dropout_rate=0.5):
     if model_name == "vgg":
         model = models.vgg16(pretrained=True)
         model.classifier[6] = nn.Sequential(
